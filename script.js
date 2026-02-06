@@ -64,11 +64,18 @@ carForm.addEventListener('submit', (e) => {
     alert("Suggestion enregistrée dans le bloc-notes !");
 });
 
-// Bouton pour vider la mémoire
+// Remplacer l'ancien écouteur d'événement par celui-ci
 clearBtn.addEventListener('click', () => {
-    if(confirm("Voulez-vous vraiment effacer tout le bloc-notes ?")) {
-        localStorage.removeItem('mesVoitures');
-        afficherNotes();
+    const codeAdmin = "!admin_Overtagz!"; // Choisis ton code ici
+    const saisie = prompt("Veuillez entrer le code administrateur pour vider le bloc-notes :");
+
+    if (saisie === codeAdmin) {
+        if (confirm('Êtes-vous sûr de vouloir supprimer TOUTES les suggestions ?')) {
+            localStorage.removeItem('mesVoitures');
+            afficherNotes();
+        }
+    } else {
+        alert("Code incorrect. Action annulée.");
     }
 });
 
@@ -123,4 +130,5 @@ if (suggestionForm) {
         alert("Suggestion bien reçue !");
         suggestionForm.reset();
     });
+
 }
