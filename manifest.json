@@ -1,0 +1,15 @@
+{
+  "name": "Mon Garage de Luxe",
+  "short_name": "LuxeCars",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#ff3e3e",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/741/741407.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
